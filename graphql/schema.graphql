@@ -1,0 +1,37 @@
+# To really understand GraphQL, go to http://graphql.org/guide/
+
+type Product {
+  id: Int,
+  name: String,
+  linkId: String,
+  description: String
+}
+
+input OrderFormItemInput {
+  id: Int
+  quantity: Int
+  seller: String
+}
+
+type OrderFormItem {
+  id: Int
+  productId: Int
+  name: String
+  skuName: String
+  price: Int
+  refId: String
+}
+
+type OrderForm {
+  orderFormId: String
+  salesChannel: Int
+  items: [OrderFormItem]
+}
+
+type Query {
+  product(id: Int): Product
+}
+
+type Mutation {
+  addToCart(orderFormId: String, items: [OrderFormItemInput]): OrderForm
+}

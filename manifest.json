@@ -1,0 +1,39 @@
+{
+  "name": "graphql-api-example",
+  "vendor": "fashionemea",
+  "version": "0.0.1",
+  "title": "VTEX IO App Example",
+  "description": "Reference app for VTEX IO",
+  "dependencies": {},
+  "builders": {
+    "graphql": "1.x",
+    "node": "6.x",
+    "docs": "0.x"
+  },
+  "policies": [
+    {
+      "name": "colossus-fire-event"
+    },
+    {
+      "name": "colossus-write-logs"
+    },
+    {
+      "name": "graphql-query"
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "portal.vtexcommercestable.com.br",
+        "path": "/*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "{{account}}.vtexcommercestable.com.br",
+        "path": "/api/*"
+      }
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
+}
