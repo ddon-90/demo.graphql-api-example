@@ -49,7 +49,7 @@ vtex link
 
 6. After the linking, open Postman or the built-in GraphQL IDE and make queries/mutations
 
-Get a Product by ID:
+### Get a Product by ID:
 ```
 query Product ($id: Int) {
   product(id: $id) {
@@ -66,7 +66,7 @@ Variables:
 }
 ```
 
-Add to Cart:
+### Add to Cart:
 ```
 mutation AddToCart ($orderFormId: String, $items: [OrderFormItemInput]) {
   addToCart(orderFormId: $orderFormId, items: $items) {
