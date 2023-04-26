@@ -1,7 +1,7 @@
 import type { InstanceOptions, IOContext } from '@vtex/api'
 import { JanusClient } from '@vtex/api'
 
-import { OrderFormItemInput } from './../typings/checkout'
+import { OrderFormItemInput, OrderFormUpdateItemInput } from './../typings/checkout'
 
 export class Checkout extends JanusClient {
   constructor(context: IOContext, options?: InstanceOptions) {
@@ -25,6 +25,14 @@ export class Checkout extends JanusClient {
       orderItems: items
     }, {
       metric: 'add-to-cart',
+    })
+  }
+
+  public async updateCartItems(orderFormId: string, items: OrderFormUpdateItemInput[]): Promise<any> {
+    return this.http.post(`api/checkout/pub/orderForm/${orderFormId}/items/update`, {
+      orderItems: items
+    }, {
+      metric: 'update-cart-items',
     })
   }
 }

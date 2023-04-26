@@ -3,3 +3,8 @@ export interface OrderFormItemInput {
   quantity: number
   seller: string
 }
+
+export interface OrderFormUpdateItemInput {
+  index: number
+  quantity: number
+}

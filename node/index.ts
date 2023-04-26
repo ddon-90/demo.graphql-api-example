@@ -7,7 +7,7 @@ import {
 
 import { Clients } from './clients'
 import { product } from './resolvers/catalog'
-import { addToCart } from './resolvers/checkout'
+import { addToCart, updateCartItems } from './resolvers/checkout'
 
 const MEDIUM_TIMEOUT_MS = 2 * 1000
 
@@ -33,6 +33,7 @@ export default new Service<Clients, RecorderState, ParamsContext>({
       },
       Mutation: {
         addToCart: addToCart,
+        updateCartItems: updateCartItems,
       },
     },
   },

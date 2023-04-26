@@ -13,6 +13,11 @@ input OrderFormItemInput {
   seller: String
 }
 
+input OrderFormUpdateItemInput {
+  index: Int
+  quantity: Int
+}
+
 type OrderFormItem {
   id: Int
   productId: Int
@@ -35,4 +40,5 @@ type Query {
 
 type Mutation {
   addToCart(orderFormId: String, items: [OrderFormItemInput]): OrderForm
+  updateCartItems(orderFormId: String, items: [OrderFormUpdateItemInput]): OrderForm
 }

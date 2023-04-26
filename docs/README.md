@@ -74,12 +74,9 @@ mutation AddToCart ($orderFormId: String, $items: [OrderFormItemInput]) {
     salesChannel
     items {
       id
-      productId
       name
-      skuName
       price
       quantity
-      refId
     }
   }
 }
@@ -90,6 +87,31 @@ Variables:
   "items": [
     { "id": 1, "quantity": 5, "seller": "1" },
     { "id": 15, "quantity": 2, "seller": "1" }
+  ]
+}
+```
+
+### Update Cart Items:
+```
+mutation UpdateCartItems ($orderFormId: String, $items: [OrderFormUpdateItemInput]) {
+  updateCartItems(orderFormId: $orderFormId, items: $items) {
+    orderFormId
+    salesChannel
+    items {
+      id
+      name
+      price
+      quantity
+    }
+  }
+}
+
+Variables:
+{
+  "orderFormId": "1e302e3361b8472aa76634a200015dc0",
+  "items": [
+    { "index": 0, "quantity": 1 },
+    { "index": 1, "quantity": 0 }
   ]
 }
 ```
