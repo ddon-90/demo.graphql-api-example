@@ -78,6 +78,7 @@ mutation AddToCart ($orderFormId: String, $items: [OrderFormItemInput]) {
       name
       skuName
       price
+      quantity
       refId
     }
   }
@@ -87,8 +88,8 @@ Variables:
 {
   "orderFormId": "1e302e3361b8472aa76634a200015dc0",
   "items": [
-      { "id": 1, "quantity": 5, "seller": "1" },
-      { "id": 15, "quantity": 2, "seller": "1" }
-    ]
+    { "id": 1, "quantity": 5, "seller": "1" },
+    { "id": 15, "quantity": 2, "seller": "1" }
+  ]
 }
 ```

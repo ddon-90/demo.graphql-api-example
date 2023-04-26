@@ -19,6 +19,7 @@ type OrderFormItem {
   name: String
   skuName: String
   price: Int
+  quantity: Int
   refId: String
 }
 
